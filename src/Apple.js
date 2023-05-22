@@ -1,8 +1,10 @@
 import { useNavigate } from "react-router-dom";
+import { Button } from "@mui/material";
 export const Apple = () => {
     const Navigate = useNavigate();
     const onHomePageButtonClick = () => {
-        Navigate("/");
+        //Navigate("/");
+        alert("The button has been clicked");
     };
     return (
         <div>
