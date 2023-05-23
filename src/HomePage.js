@@ -1,14 +1,15 @@
-/* eslint-disable no-undef */
 import { Button } from "@mui/material";
+
 export const HomePage = () => {
-    function onHomePageButtonClick() { }
-    
+
+    const onHomePageButtonClick = () => {
+
+     }
     return (
+    <div style={{paddingLeft: 10, fontSize:"15px"}}>Home Page
         <div>
-            Home Page
-            <Button variant="contained" onClick={onHomePageButtonClick} className="">
-                Hello World
-            </Button>
+        { <Button variant="contained" onClick={onHomePageButtonClick}>Navigate</Button> }
         </div>
+   </div>
     );
 };
