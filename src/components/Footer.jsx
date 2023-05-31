@@ -4,7 +4,8 @@ export default function Footer() {
             <div>
             <img src="http://localhost:5173/site-logo.svg" className="w-48 h-28" />
             </div>
-            <div>© 2023 Abhi. All Rights reserved.</div>
+            <div> All Rights reserved...2023</div>
+            <div> Shyam</div>
         </div>
     );
 }
