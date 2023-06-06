@@ -1,43 +1,37 @@
+import React from "react";
+import { ThemeProvider } from "@material-ui/core/styles";
+import { theme } from "./utils/theme";
+import "./assets/css/style.css";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { BrowserRouter } from "react-router-dom";
+import { MainNavigation } from "./components/MainNavigation";
+import loader from "../src/assets/images/loader.gif";
+import { Footer } from "./components/footer";
+import { AuthWrapper } from "./context/auth";
+import Header from "./components/header";
+import { CartWrapper } from "./context/cart";
 
-import './App.css';
-import {Routes, Route, BrowserRouter,} from "react-router-dom";
-//import { globleStyles } from './constants';
-
-
-
-import { HomePage } from './HomePage';
-import { Apple } from './Apple';
-import { NotFound } from './NotFound';
-
-//import Logo from "./images/logo.svg";
-//import siteLogo from "../public/logo192.png"
-
-import { ThemeProvider } from '@emotion/react';
-import { theme } from './styles';
-import { Navbar } from './Navbar';
-
-const App = () => (
-
-  <>
-  <ThemeProvider theme={theme}>
-  
-
-  <BrowserRouter>
-  <Navbar/>
-  
-  <Routes>
-       <Route path='/' element={<HomePage/>}></Route>
-       <Route path='/apple' element={<Apple/>}></Route>
-       <Route path='*' element={<NotFound/>}></Route>
-  </Routes>
-  
-  </BrowserRouter>
-
-  {/* <img src={Logo} alt='App Logo'/> */}
-  {/* <img src={`${process.env.REACT_APP_HOSTED_URL}logo192.png`} alt='App Logo'/> */}
-  </ThemeProvider>
- </>
+const App = () => {
+  return (
+    <BrowserRouter>
+      <AuthWrapper>
+        <CartWrapper>
+          <ThemeProvider theme={theme}>
+            <div className="loader-wrapper">
+              <img src={loader} alt="loader" />
+            </div>
+            <Header />
+            <main>
+              <MainNavigation />
+            </main>
+            <Footer />
+            <ToastContainer />
+          </ThemeProvider>
+        </CartWrapper>
+      </AuthWrapper>
+    </BrowserRouter>
   );
-
+};
 
 export default App;
